@@ -1,5 +1,4 @@
 import React from "react";  // Importimi i modulit React
-import "../../assets/styles/Contact.css";  // Importimi i stilizimit CSS për komponentën Contact
 import { useState } from "react";  // Importimi i useState hook nga React
 import { useData } from "./DataContext";  // Importimi i hook-ut useData nga DataContext
 

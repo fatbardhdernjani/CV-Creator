@@ -2,6 +2,8 @@
     background-color: var(--white);
     border-radius: var(--border-radius);
     padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .menu_button{
@@ -89,9 +91,13 @@ form div input{
 .save_user{
     padding: 0.8rem;
     font-size: 0.8rem;
-    background-color: var(--low-blue) ;
+    background-color: #be3144;
     color: var(--white);
     font-weight: var(--font-semibold);
     border-radius: 0.6rem;
     color: var(--white);
+}
+
+.save_user:hover {
+    background-color: #d15162;
 }

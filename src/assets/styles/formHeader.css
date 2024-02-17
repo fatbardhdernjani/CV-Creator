@@ -2,7 +2,8 @@
     background-color: var(--white);
     padding: 20px ;
     width: 100%;
-    border-radius: var(--border-radius); 
+    border-radius: var(--border-radius);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 .formHeader div{
@@ -31,13 +32,13 @@
     justify-content: center;
     gap: 0.3rem;
     border-radius: var(--border-radius);
-    background-color: var(--low-blue) ;
+    background-color: #be3144;
     color: var(--white);
     transition:  ease;
 }
 
 .button:hover{
-    background-color: var(--blue);
+    background-color: #d15162;
 }
 
 .formHeader p{

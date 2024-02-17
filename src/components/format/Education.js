@@ -1,5 +1,4 @@
 import React from "react";  // Importimi i modulit React
-import "../../assets/styles/Education.css";  // Importimi i stilizimit CSS për komponentën Education
 import { useData } from "./DataContext";  // Përdorimi i hook-ut useData nga DataContext
 import { useForm } from "react-hook-form";  // Përdorimi i hook-ut useForm nga biblioteka react-hook-form
 
