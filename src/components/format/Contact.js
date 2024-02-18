@@ -1,41 +1,41 @@
-import React from "react";  // Importimi i modulit React
-import { useState } from "react";  // Importimi i useState hook nga React
-import { useData } from "./DataContext";  // Importimi i hook-ut useData nga DataContext
+import React from "react"; 
+import { useState } from "react"; 
+import { useData } from "./DataContext";
 
-const Contact = () => {  // Deklarimi i komponentës Contact si funksion arrow
-  const { dispatch } = useData();  // Deklarimi i dispatch nga hook-u useData për dërgimin e të dhënave në DataContext
+const Contact = () => { 
+  const { dispatch } = useData();  
 
-  const [formData, setFormData] = useState({  // Deklarimi i një gjendje lokale për të mbajtur të dhënat e formës
-    address: "",  // Adresa
-    email: "",  // Email-i
-    phone: "",  // Numri i telefonit
-    link: "",  // Linku i punës
+  const [formData, setFormData] = useState({  
+    address: "", 
+    email: "", 
+    phone: "",
+    link: "", 
   });
 
-  const handleInputChange = (e) => {  // Funksioni për menaxhimin e ndryshimeve në inpute
-    const { name, value } = e.target;  // Marrja e emrit dhe vlerës së inputit të ndryshuar
-    setFormData((prevData) => ({  // Përditësimi i gjendjes së formës së dhënë
+  const handleInputChange = (e) => { 
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ 
       ...prevData,
-      [name]: value,  // Përditësimi i vlerës së inputit të ndryshuar
+      [name]: value,  
     }));
   };
 
-  const handleSubmit = (e) => {  // Funksioni për dërgimin e të dhënave të formës
-    e.preventDefault();  // Parandalimi i sjelljes së parazgjedhur të formës
-    dispatch({ type: "SET_USER_DATA", payload: formData });  // Dërgimi i të dhënave të formës në DataContext
+  const handleSubmit = (e) => {  
+    e.preventDefault();
+    dispatch({ type: "SET_USER_DATA", payload: formData }); 
   };
 
-  return (  // Kthimi i JSX përmbajtjes së komponentit Contact
-    <div className="menu">  {/* Div-i kryesor me klasën "menu" */}
-      <div className="title">  {/* Div-i për titullin dhe ikonën */}
-        <div>  {/* Div-i për ikonën dhe titullin */}
-          <i className="fa-solid fa-address-book"></i>  {/* Ikona për kontaktet */}
-          <h2>Kontakt</h2>  {/* Titulli për kontaktet */}
+  return ( 
+    <div className="menu"> 
+      <div className="title">
+        <div> 
+          <i className="fa-solid fa-address-book"></i>
+          <h2>Kontakt</h2> 
         </div>
-        <div className="icons" id="icons"></div>  {/* Div-i për ikonat opsionale */}
+        <div className="icons" id="icons"></div> 
       </div>
 
-      <form>  {/* Forma për të dhënat e kontaktit */}
+      <form> 
         <input
           type="text"
           name="address"
@@ -43,7 +43,7 @@ const Contact = () => {  // Deklarimi i komponentës Contact si funksion arrow
           id="address"
           placeholder="Adresa"
           value={formData.address}
-          onChange={handleInputChange}  // Event handler për ndryshimet në adresë
+          onChange={handleInputChange} 
         />
         <div>
           <input
@@ -53,7 +53,7 @@ const Contact = () => {  // Deklarimi i komponentës Contact si funksion arrow
             className="email"
             placeholder="E-mail"
             value={formData.email}
-            onChange={handleInputChange}  // Event handler për ndryshimet në email
+            onChange={handleInputChange} 
           />
           <input
             type="text"
@@ -62,7 +62,7 @@ const Contact = () => {  // Deklarimi i komponentës Contact si funksion arrow
             className="phone"
             placeholder="Numri i telefonit tuaj"
             value={formData.phone}
-            onChange={handleInputChange}  // Event handler për ndryshimet në numrin e telefonit
+            onChange={handleInputChange}
           />
         </div>
         <input
@@ -72,9 +72,9 @@ const Contact = () => {  // Deklarimi i komponentës Contact si funksion arrow
           id="link"
           placeholder="Link i punës tuaj"
           value={formData.link}
-          onChange={handleInputChange}  // Event handler për ndryshimet në linkun e punës
+          onChange={handleInputChange} 
         />
-        <button type="submit" onClick={handleSubmit}>  {/* Butoni për dërgimin e të dhënave */}
+        <button type="submit" onClick={handleSubmit}> 
           Ruaj
         </button>
       </form>
@@ -82,9 +82,5 @@ const Contact = () => {  // Deklarimi i komponentës Contact si funksion arrow
   );
 };
 
-export default Contact;  // Exportimi i komponentës Contact si komponentë fillestare
+export default Contact; 
 
-
-// Komponenta Contact është përgjegjëse për të lejuar përdoruesin të futë dhe të modifikojë të dhënat e kontaktit të tyre.
-// Ajo përdor hook-un useData nga DataContext për të dërguar të dhënat në context. Përfshin një formë ku përdoruesi mund të shtypë adresën, email-in, numrin e telefonit dhe linkun e punës së tyre.
-// Pas dërgimit të formës, të dhënat e shtypura dërgohen në DataContext për ruajtje.
